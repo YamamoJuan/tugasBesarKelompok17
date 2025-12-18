@@ -1,0 +1,10 @@
+# Go build
+bin/
+*.exe
+*.out
+
+# VS Code local
+.vscode/launch.json
+
+# OS
+.DS_Store
