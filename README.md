@@ -13,7 +13,7 @@
 ## 👥 Anggota Kelompok
 Project ini dikerjakan secara **berkelompok (2 orang)**:
 - [Yamamo Juan](https://github.com/YamamoJuan)
-- [Fathuridz Akmal](https://github.com/Fathuridzakmal)
+- [Fathuridza Akmal](https://github.com/Fathuridzakmal)
 
 ---
 
