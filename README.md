@@ -12,13 +12,13 @@
 
 ## 👥 Anggota Kelompok
 Project ini dikerjakan secara **berkelompok (2 orang)**:
-- **YamamoJuan**
-- **[Nama Teman Kamu]**
+- [Yamamo Juan](https://github.com/YamamoJuan)
+- [Fathuridz Akmal](https://github.com/Fathuridzakmal)
 
 ---
 
 ## 🚀 Cara Menjalankan Program
-Pastikan Go sudah terinstall.
+Pastikan Go sudah terinstall!
 
 ```bash
-go run main.go
+go run tugasBesar.go
