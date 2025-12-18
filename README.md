@@ -8,14 +8,12 @@
   Repository ini berisi program <b>Golang</b> yang dibuat untuk memenuhi tugas besar mata kuliah.
 </p>
 
----
 
 ## 👥 Anggota Kelompok
 Project ini dikerjakan secara **berkelompok (2 orang)**:
 - [Yamamo Juan](https://github.com/YamamoJuan)
 - [Fathuridza Akmal](https://github.com/Fathuridzakmal)
 
----
 
 ## 🚀 Cara Menjalankan Program
 Pastikan Go sudah terinstall!
