@@ -1,31 +1,32 @@
-// Nomor Kelompok: Kelompok 17
-// Anggota Kelompok: Fathuridza Akmal Hafidz Priyambodo, Yamamo Juan Alterico Situmorang
-// Kelas: IT-49-03
+// Nama Kelompok : Kelompok 17
+// Anggota Kelompok : Fathuridza Akmal Hafidz Priyambodo, Yamamo Juan Alterico Situmorang
+// NIM Kelompok : 103032500048, 103032530028
+// Kelas : IT-49-03
 
 package main
+
 import "fmt"
+import "time"
 
 // konversi
-
-func kmToM(km float64) float64 { return km * 1000 }
-func hToS(h float64) float64  { return h * 3600 }
+func kmToMeter(km float64) float64 { return km * 1000 }
+func hourToSecond(hour float64) float64 { return hour * 3600 }
 func msToKmh(ms float64) float64 { return ms * 3.6 }
 
-// kecepatan
-
+// hitung kecepatan
 func hitungKecepatan() {
 	var jarak, waktu float64
-	var sj, sw int
+	var satuanJarak, satuanWaktu int
 
 	fmt.Println("Satuan Jarak: 1.Km  2.Meter")
 	fmt.Print("Pilih: ")
-	fmt.Scan(&sj)
+	fmt.Scan(&satuanJarak)
 	fmt.Print("Masukkan jarak: ")
 	fmt.Scan(&jarak)
 
 	fmt.Println("\nSatuan Waktu: 1.Jam  2.Detik")
 	fmt.Print("Pilih: ")
-	fmt.Scan(&sw)
+	fmt.Scan(&satuanWaktu)
 	fmt.Print("Masukkan waktu: ")
 	fmt.Scan(&waktu)
 
@@ -34,80 +35,98 @@ func hitungKecepatan() {
 		return
 	}
 
-	if sj == 1 {
-		jarak = kmToM(jarak)
+	if satuanJarak == 1 {
+		jarak = kmToMeter(jarak)
 	}
-	if sw == 1 {
-		waktu = hToS(waktu)
+	if satuanWaktu == 1 {
+		waktu = hourToSecond(waktu)
 	}
 
-	ms := jarak / waktu
-	fmt.Printf("\nKecepatan: %.2f m/s\n", ms)
-	fmt.Printf("Kecepatan: %.2f km/h\n", msToKmh(ms))
+	kecepatan := jarak / waktu
+	fmt.Printf("\nKecepatan: %.2f km/h atau %.2f m/s\n", msToKmh(kecepatan), kecepatan,)	
 }
 
-// jarak
-
+// hitung jarak
 func hitungJarak() {
-	var v, t float64
+	var kecepatan, waktu float64
 
 	fmt.Print("Kecepatan (km/h): ")
-	fmt.Scan(&v)
+	fmt.Scan(&kecepatan)
 	fmt.Print("Waktu (jam): ")
-	fmt.Scan(&t)
+	fmt.Scan(&waktu)
 
-	if v <= 0 || t <= 0 {
+	if kecepatan <= 0 || waktu <= 0 {
 		fmt.Println("Input tidak valid")
 		return
 	}
 
-	km := v * t
-	fmt.Printf("\nJarak: %.2f km\n", km)
-	fmt.Printf("Jarak: %.2f meter\n", kmToM(km))
+	jarak := kecepatan * waktu
+	fmt.Printf("\nJarak: %.2f km atau %.0f meter\n", jarak, kmToMeter(jarak))
+
 }
 
-// waktu 
-
+// hitung waktu
 func hitungWaktu() {
-	var s, v float64
+	var jarak, kecepatan float64
 
 	fmt.Print("Jarak (km): ")
-	fmt.Scan(&s)
+	fmt.Scan(&jarak)
 	fmt.Print("Kecepatan (km/h): ")
-	fmt.Scan(&v)
+	fmt.Scan(&kecepatan)
 
-	if s <= 0 || v <= 0 {
+	if jarak <= 0 || kecepatan <= 0 {
 		fmt.Println("Input tidak valid")
 		return
 	}
 
-	h := s / v
-	fmt.Printf("\nWaktu: %.2f jam\n", h)
-	fmt.Printf("Waktu: %.2f detik\n", hToS(h))
+	totalJam := jarak / kecepatan
+
+	jam := int(totalJam)
+	sisaMenit := (totalJam - float64(jam)) * 60
+	menit := int(sisaMenit)
+	detik := int((sisaMenit - float64(menit)) * 60)
+
+	fmt.Printf("\nWaktu: %d jam, %d menit, %d detik\n", jam, menit, detik)
 }
 
-// utama
 
 func main() {
-	var menu int
+	var menu, ulang int
 
-	fmt.Println("Aplikasi Jarak, Waktu, Kecepatan")
-	fmt.Println("1. Hitung Kecepatan")
-	fmt.Println("2. Hitung Jarak")
-	fmt.Println("3. Hitung Waktu")
-	fmt.Print("Pilih menu: ")
-	fmt.Scan(&menu)
+	fmt.Println("dibuat dengan penuh semangat oleh kelompok 17")
+	time.Sleep(500 * time.Millisecond)
 
-	fmt.Println("--------------------")
+	for {
+		fmt.Println("\nAplikasi Penghitung Kecepatan, Jarak, dan Waktu")
+		fmt.Println("1. Hitung Kecepatan")
+		fmt.Println("2. Hitung Jarak")
+		fmt.Println("3. Hitung Waktu")
+		fmt.Print("Pilih menu: ")
+		fmt.Scan(&menu)
 
-	switch menu {
-	case 1:
-		hitungKecepatan()
-	case 2:
-		hitungJarak()
-	case 3:
-		hitungWaktu()
-	default:
-		fmt.Println("Menu tidak tersedia")
+		fmt.Println("--------------------")
+
+		switch menu {
+		case 1:
+			hitungKecepatan()
+		case 2:
+			hitungJarak()
+		case 3:
+			hitungWaktu()
+		default:
+			fmt.Println("Menu tidak tersedia")
+			continue
+		}
+
+		fmt.Println("\nProgram selesai!")
+		fmt.Println("1. Hitung ulang")
+		fmt.Println("2. Keluar")
+		fmt.Print("Pilih: ")
+		fmt.Scan(&ulang)
+
+		if ulang == 2 {
+			fmt.Println("Terima kasih!")
+			break
+		}
 	}
 }
