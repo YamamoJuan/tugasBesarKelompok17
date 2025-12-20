@@ -1,4 +1,4 @@
-//Nama Kelompok : kelompok 17
+//Nama Kelompok : Kelompok 17
 //Anggota Kelompok : Fathuridza Akmal Hafidz Priyambodo, Yamamo Juan Alterico Situmorang
 //NIM Kelompok : 103032500048, 103032530028
 //Kelas : IT-49-03
